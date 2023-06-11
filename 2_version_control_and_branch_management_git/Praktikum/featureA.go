@@ -2,6 +2,7 @@ package versionControlAndBranchManagement
 
 import "fmt"
 
-func FeatureA() {
+func UpdateFeatureA() {
 	fmt.Println("Adding featureA")
+	fmt.Println("featureA updated")
 }
