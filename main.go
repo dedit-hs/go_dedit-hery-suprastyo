@@ -25,5 +25,6 @@ func sectionIntroToAlgorithm() {
 }
 
 func sectionVersionControl() {
+	versionControlAndBranchManagement.FeatureA()
 	versionControlAndBranchManagement.FeatureB()
 }
