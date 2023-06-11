@@ -27,4 +27,7 @@ func sectionIntroToAlgorithm() {
 func sectionVersionControl() {
 	versionControlAndBranchManagement.UpdateFeatureA()
 	versionControlAndBranchManagement.FeatureB()
+	fmt.Println("add new featureA")
+	fmt.Println("update featureA")
+	fmt.Println("new update featureA")
 }
