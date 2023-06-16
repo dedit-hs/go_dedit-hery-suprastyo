@@ -8,6 +8,7 @@ import (
 	basicProgramming "github.com/dedit-hs/go_dedit-hery-suprastyo/3_basic_programming/Praktikum"
 	dataStructure "github.com/dedit-hs/go_dedit-hery-suprastyo/4_data_structure/Praktikum"
 	pointerAndErrorHandling "github.com/dedit-hs/go_dedit-hery-suprastyo/5_pointer_and_error_handling/Praktikum"
+	timeComplexity "github.com/dedit-hs/go_dedit-hery-suprastyo/6_time_complexity/Praktikum"
 )
 
 func main() {
@@ -21,7 +22,8 @@ func main() {
 	sectionDataStructure() // Tugas Praktikum 4
 	fmt.Println("***** Pointer, Advanced Function, Struct Etc. *****")
 	sectionPointerAndErrorHandling() // Tugas Praktikum 5
-
+	fmt.Println("\n***** Time Complexity *****")
+	sectionTimeComplexity() // Tugas Praktikum 6
 }
 
 func sectionIntroToAlgorithm() {
@@ -93,24 +95,24 @@ func sectionPointerAndErrorHandling() {
 	fmt.Println("Nilai Min: ", min)
 	fmt.Println("Nilai Max: ", max)
 
-	// var std = pointerAndErrorHandling.Student{}
+	var std = pointerAndErrorHandling.Student{}
 
-	// for i := 0; i < 6; i++ {
-	// 	var name string
-	// 	fmt.Printf("Input Student's %d Name : ", i)
-	// 	fmt.Scan(&name)
-	// 	std.Name = append(std.Name, name)
-	// 	var score int
-	// 	fmt.Print("Input " + name + " Score : ")
-	// 	fmt.Scan(&score)
-	// 	std.Score = append(std.Score, score)
-	// }
+	for i := 0; i < 6; i++ {
+		var name string
+		fmt.Printf("Input Student's %d Name : ", i)
+		fmt.Scan(&name)
+		std.Name = append(std.Name, name)
+		var score int
+		fmt.Print("Input " + name + " Score : ")
+		fmt.Scan(&score)
+		std.Score = append(std.Score, score)
+	}
 
-	// fmt.Println("\n\nAverage Score Students is ", std.Average())
-	// scoreMax, nameMax := std.Max()
-	// fmt.Println("Max score Students is: "+nameMax+" (", scoreMax, ")")
-	// scoreMin, nameMin := std.Min()
-	// fmt.Println("Min score Students is: "+nameMin+" (", scoreMin, ")")
+	fmt.Println("\n\nAverage Score Students is ", std.Average())
+	scoreMax, nameMax := std.Max()
+	fmt.Println("Max score Students is: "+nameMax+" (", scoreMax, ")")
+	scoreMin, nameMin := std.Min()
+	fmt.Println("Min score Students is: "+nameMin+" (", scoreMin, ")")
 
 	var menu int
 	var siswa = pointerAndErrorHandling.Siswa{}
@@ -129,4 +131,17 @@ func sectionPointerAndErrorHandling() {
 	default:
 		fmt.Println("Wrong input name menu.")
 	}
+}
+
+func sectionTimeComplexity() {
+	n := 12
+	isPrime := timeComplexity.PrimeNumber(n)
+
+	if isPrime {
+		fmt.Printf("%d adalah bilangan prima.\n", n)
+	} else {
+		fmt.Printf("%d BUKAN bilangan prima.\n", n)
+	}
+
+	fmt.Println(timeComplexity.Pow(2, 10))
 }
