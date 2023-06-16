@@ -93,24 +93,24 @@ func sectionPointerAndErrorHandling() {
 	fmt.Println("Nilai Min: ", min)
 	fmt.Println("Nilai Max: ", max)
 
-	// var std = pointerAndErrorHandling.Student{}
+	var std = pointerAndErrorHandling.Student{}
 
-	// for i := 0; i < 6; i++ {
-	// 	var name string
-	// 	fmt.Printf("Input Student's %d Name : ", i)
-	// 	fmt.Scan(&name)
-	// 	std.Name = append(std.Name, name)
-	// 	var score int
-	// 	fmt.Print("Input " + name + " Score : ")
-	// 	fmt.Scan(&score)
-	// 	std.Score = append(std.Score, score)
-	// }
+	for i := 0; i < 6; i++ {
+		var name string
+		fmt.Printf("Input Student's %d Name : ", i)
+		fmt.Scan(&name)
+		std.Name = append(std.Name, name)
+		var score int
+		fmt.Print("Input " + name + " Score : ")
+		fmt.Scan(&score)
+		std.Score = append(std.Score, score)
+	}
 
-	// fmt.Println("\n\nAverage Score Students is ", std.Average())
-	// scoreMax, nameMax := std.Max()
-	// fmt.Println("Max score Students is: "+nameMax+" (", scoreMax, ")")
-	// scoreMin, nameMin := std.Min()
-	// fmt.Println("Min score Students is: "+nameMin+" (", scoreMin, ")")
+	fmt.Println("\n\nAverage Score Students is ", std.Average())
+	scoreMax, nameMax := std.Max()
+	fmt.Println("Max score Students is: "+nameMax+" (", scoreMax, ")")
+	scoreMin, nameMin := std.Min()
+	fmt.Println("Min score Students is: "+nameMin+" (", scoreMin, ")")
 
 	var menu int
 	var siswa = pointerAndErrorHandling.Siswa{}
