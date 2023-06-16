@@ -7,6 +7,7 @@ import (
 	versionControlAndBranchManagement "github.com/dedit-hs/go_dedit-hery-suprastyo/2_version_control_and_branch_management_git/Praktikum"
 	basicProgramming "github.com/dedit-hs/go_dedit-hery-suprastyo/3_basic_programming/Praktikum"
 	dataStructure "github.com/dedit-hs/go_dedit-hery-suprastyo/4_data_structure/Praktikum"
+	pointerAndErrorHandling "github.com/dedit-hs/go_dedit-hery-suprastyo/5_pointer_and_error_handling/Praktikum"
 )
 
 func main() {
@@ -18,6 +19,9 @@ func main() {
 	sectionBasicProgramming() // Tugas Praktikum 3
 	fmt.Println("***** Data Structure *****")
 	sectionDataStructure() // Tugas Praktikum 4
+	fmt.Println("***** Pointer, Advanced Function, Struct Etc. *****")
+	sectionPointerAndErrorHandling() // Tugas Praktikum 5
+
 }
 
 func sectionIntroToAlgorithm() {
@@ -64,4 +68,65 @@ func sectionDataStructure() {
 	fmt.Println(dataStructure.Merge([]string{"saya", "dia", "mereka"}, []string{"kita", "saya"}))
 	fmt.Println(dataStructure.MunculSekali("223345566789"))
 	fmt.Println(dataStructure.PairSum([]int{2, 5, 9, 11}, 11))
+}
+
+func sectionPointerAndErrorHandling() {
+	fmt.Println(pointerAndErrorHandling.CompareString("LEMFOXBRO", "FOX"))
+	fmt.Println(pointerAndErrorHandling.Caesar(2, "alta"))
+	a := 12
+	b := 3
+	pointerAndErrorHandling.Swap(&a, &b)
+	var a1, a2, a3, a4, a5, a6, min, max int
+	fmt.Printf("Masukkan nilai 1: ")
+	fmt.Scan(&a1)
+	fmt.Printf("Masukkan nilai 2: ")
+	fmt.Scan(&a2)
+	fmt.Printf("Masukkan nilai 3: ")
+	fmt.Scan(&a3)
+	fmt.Printf("Masukkan nilai 4: ")
+	fmt.Scan(&a4)
+	fmt.Printf("Masukkan nilai 5: ")
+	fmt.Scan(&a5)
+	fmt.Printf("Masukkan nilai 6: ")
+	fmt.Scan(&a6)
+	min, max = pointerAndErrorHandling.GetMinMax(&a1, &a2, &a3, &a4, &a5, &a6)
+	fmt.Println("Nilai Min: ", min)
+	fmt.Println("Nilai Max: ", max)
+
+	var std = pointerAndErrorHandling.Student{}
+
+	for i := 0; i < 6; i++ {
+		var name string
+		fmt.Printf("Input Student's %d Name : ", i)
+		fmt.Scan(&name)
+		std.Name = append(std.Name, name)
+		var score int
+		fmt.Print("Input " + name + " Score : ")
+		fmt.Scan(&score)
+		std.Score = append(std.Score, score)
+	}
+
+	fmt.Println("\n\nAverage Score Students is ", std.Average())
+	scoreMax, nameMax := std.Max()
+	fmt.Println("Max score Students is: "+nameMax+" (", scoreMax, ")")
+	scoreMin, nameMin := std.Min()
+	fmt.Println("Min score Students is: "+nameMin+" (", scoreMin, ")")
+
+	var menu int
+	var siswa = pointerAndErrorHandling.Siswa{}
+	var c pointerAndErrorHandling.Cipher = &siswa
+	fmt.Print("[1] Encrypt \n[2] Decrypt \nChoose your menu?")
+	fmt.Scan(&menu)
+	switch menu {
+	case 1:
+		fmt.Print("\nInput Nama Siswa: ")
+		fmt.Scan(&siswa.Nama)
+		fmt.Print("\nEncode dari Nama Siswa " + siswa.Nama + " is : " + c.Encode())
+	case 2:
+		fmt.Print("\nInput Nama Siswa: ")
+		fmt.Scan(&siswa.Nama)
+		fmt.Print("\nDecode dari Nama Siswa " + siswa.Nama + " is : " + c.Decode())
+	default:
+		fmt.Println("Wrong input name menu.")
+	}
 }
