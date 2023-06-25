@@ -1,0 +1,69 @@
+{
+	"info": {
+		"_postman_id": "d64a23ad-fe0e-460e-9c7a-0c4438188445",
+		"name": "RentABook API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19163250"
+	},
+	"item": [
+		{
+			"name": "Book",
+			"item": [
+				{
+					"name": "Get All Book",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "{{base_url}}/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Add New Book",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1112,\r\n    \"title\": \"Ini Buku Baru\",\r\n    \"isbn\": \"2-222-321321-910123123-111\",\r\n    \"writer\": \"Dr. Saya\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/book"
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Book",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 1112,\r\n    \"title\": \"Ini Buku Baru Terupdate\",\r\n    \"isbn\": \"2-222-321321-910123123-111\",\r\n    \"writer\": \"Dr. Saya Bang\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{base_url}}/book/1112"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Book",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "{{base_url}}/book/1112"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
