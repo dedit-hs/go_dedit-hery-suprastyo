@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "70d52147-370a-467b-934a-a345f6e7173e",
+		"name": "SwAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19163250"
+	},
+	"item": [
+		{
+			"name": "Get All People",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{swapi_base_url}}/people"
+			},
+			"response": []
+		},
+		{
+			"name": "Get People By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{swapi_base_url}}/people/3"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{swapi_base_url}}/vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles By ID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{swapi_base_url}}/vehicles/7"
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Films",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{swapi_base_url}}/films"
+			},
+			"response": []
+		},
+		{
+			"name": "Search People",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{swapi_base_url}}/people?search=kenobi",
+					"host": [
+						"{{swapi_base_url}}"
+					],
+					"path": [
+						"people"
+					],
+					"query": [
+						{
+							"key": "search",
+							"value": "kenobi"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get People (Wookiee)",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{swapi_base_url}}/people/1?format=wookiee",
+					"host": [
+						"{{swapi_base_url}}"
+					],
+					"path": [
+						"people",
+						"1"
+					],
+					"query": [
+						{
+							"key": "format",
+							"value": "wookiee"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
