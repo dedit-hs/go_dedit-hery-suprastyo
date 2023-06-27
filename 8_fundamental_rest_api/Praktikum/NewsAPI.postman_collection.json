@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "66b67491-1882-40a5-97e3-6ae369a3617a",
+		"name": "NewsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "19163250"
+	},
+	"item": [
+		{
+			"name": "Get News Headline In Indonesia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{top_headline_url}}?country=id&apiKey={{API_KEY}}",
+					"host": [
+						"{{top_headline_url}}"
+					],
+					"query": [
+						{
+							"key": "country",
+							"value": "id"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get News Headline From BBC News",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{top_headline_url}}?sources=bbc-news&apiKey={{API_KEY}}",
+					"host": [
+						"{{top_headline_url}}"
+					],
+					"query": [
+						{
+							"key": "sources",
+							"value": "bbc-news"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get News Headline by Sports Category",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{top_headline_url}}/sources?category=sports&apiKey={{API_KEY}}",
+					"host": [
+						"{{top_headline_url}}"
+					],
+					"path": [
+						"sources"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "sports"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get News Headline by Sports Category In French",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{top_headline_url}}/sources?category=sports&language=fr&apiKey={{API_KEY}}",
+					"host": [
+						"{{top_headline_url}}"
+					],
+					"path": [
+						"sources"
+					],
+					"query": [
+						{
+							"key": "category",
+							"value": "sports"
+						},
+						{
+							"key": "language",
+							"value": "fr"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Custom News by Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{everything_url}}?q=coin&apiKey={{API_KEY}}",
+					"host": [
+						"{{everything_url}}"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "coin"
+						},
+						{
+							"key": "apiKey",
+							"value": "{{API_KEY}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
