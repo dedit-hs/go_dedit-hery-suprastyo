@@ -9,6 +9,7 @@ import (
 	dataStructure "github.com/dedit-hs/go_dedit-hery-suprastyo/4_data_structure/Praktikum"
 	pointerAndErrorHandling "github.com/dedit-hs/go_dedit-hery-suprastyo/5_pointer_and_error_handling/Praktikum"
 	timeComplexity "github.com/dedit-hs/go_dedit-hery-suprastyo/6_time_complexity/Praktikum"
+	basicFramework "github.com/dedit-hs/go_dedit-hery-suprastyo/9_basic_framework/Praktikum"
 )
 
 func main() {
@@ -24,6 +25,8 @@ func main() {
 	sectionPointerAndErrorHandling() // Tugas Praktikum 5
 	fmt.Println("\n***** Time Complexity *****")
 	sectionTimeComplexity() // Tugas Praktikum 6
+	e := basicFramework.Init()
+	e.Logger.Fatal(e.Start(":8000"))
 }
 
 func sectionIntroToAlgorithm() {
