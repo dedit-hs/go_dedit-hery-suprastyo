@@ -3,14 +3,22 @@ package main
 import (
 	"fmt"
 
+	// "github.com/dedit-hs/go_dedit-hery-suprastyo/10_orm_and_code_structure/Praktikum/config" // Tugas Praktikum 10
+	// "github.com/dedit-hs/go_dedit-hery-suprastyo/10_orm_and_code_structure/Praktikum/routes" // Tugas Praktikum 10
+	"github.com/dedit-hs/go_dedit-hery-suprastyo/11_middleware/Praktikum/config" // Tugas Praktikum 11
+	"github.com/dedit-hs/go_dedit-hery-suprastyo/11_middleware/Praktikum/middlewares"
+	"github.com/dedit-hs/go_dedit-hery-suprastyo/11_middleware/Praktikum/routes" // Tugas Praktikum 11
 	introductionToAlgorithm "github.com/dedit-hs/go_dedit-hery-suprastyo/1_introduction_to_algorithm/Praktikum"
 	versionControlAndBranchManagement "github.com/dedit-hs/go_dedit-hery-suprastyo/2_version_control_and_branch_management_git/Praktikum"
 	basicProgramming "github.com/dedit-hs/go_dedit-hery-suprastyo/3_basic_programming/Praktikum"
 	dataStructure "github.com/dedit-hs/go_dedit-hery-suprastyo/4_data_structure/Praktikum"
 	pointerAndErrorHandling "github.com/dedit-hs/go_dedit-hery-suprastyo/5_pointer_and_error_handling/Praktikum"
 	timeComplexity "github.com/dedit-hs/go_dedit-hery-suprastyo/6_time_complexity/Praktikum"
-	basicFramework "github.com/dedit-hs/go_dedit-hery-suprastyo/9_basic_framework/Praktikum"
 )
+
+func init() {
+	config.InitDB()
+}
 
 func main() {
 	fmt.Println("***** Introduction to Algorithm *****")
@@ -25,7 +33,10 @@ func main() {
 	sectionPointerAndErrorHandling() // Tugas Praktikum 5
 	fmt.Println("\n***** Time Complexity *****")
 	sectionTimeComplexity() // Tugas Praktikum 6
-	e := basicFramework.Init()
+	// e := basicFramework.Init() // Tugas Praktikum 9
+	// e := routes.New() // Tugas Praktikum 10
+	e := routes.New() // Tugas Praktikum 11
+	middlewares.LogMiddleware(e)
 	e.Logger.Fatal(e.Start(":8000"))
 }
 
